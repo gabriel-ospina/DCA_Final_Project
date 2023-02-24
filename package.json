@@ -1,0 +1,20 @@
+{
+  "name": "dca_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabriel-ospina/DCA_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriel-ospina/DCA_Project/issues"
+  },
+  "homepage": "https://github.com/gabriel-ospina/DCA_Project#readme"
+}
