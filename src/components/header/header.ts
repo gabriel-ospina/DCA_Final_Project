@@ -36,8 +36,11 @@ class Header extends HTMLElement{
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="../src/components/header/header.css">
             <header>
-                <img src="${this.img}">
+                <svg>
+                    <path d="${this.img}"></path>
+                <svg>
                 <button>${this.account || "XOXO"}</button>
             </header>
             `;
