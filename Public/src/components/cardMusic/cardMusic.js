@@ -25,8 +25,9 @@ class AppMusicCard extends HTMLElement {
     render() {
         if (this.shadowRoot)
             this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="../src/components/cardMusic/cardMusic.css">
             <div>
-                <div class="music-card" style="${this.thumbnail}"></div>
+                <div class="music-card" style='background-image: url("${this.thumbnail}");'></div>
                 <p>${this.mtitle}</p>
             </div>
             `;

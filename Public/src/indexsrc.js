@@ -105,6 +105,7 @@ class AppContainer extends HTMLElement {
             });
             infoSection.appendChild(interestSection);
             const musicCardSection = this.ownerDocument.createElement("section");
+            musicCardSection.className = "mcard-sec";
             this.musicCard.forEach((music) => {
                 musicCardSection.appendChild(music);
             });

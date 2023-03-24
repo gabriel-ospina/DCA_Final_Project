@@ -54,3 +54,10 @@ h1 {
     margin-left: 15px;
     width: 251px;
 }
+
+.mcard-sec{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 15px;
+}
