@@ -1,5 +1,6 @@
 import { HeaderAttribute } from "./components/header/header.js";
 import { MenuAttribute } from "./components/Menu/menu.js";
+import { appCard } from "./components/userCard/userCard.js";
 class AppContainer extends HTMLElement {
     constructor() {
         super();
@@ -14,6 +15,13 @@ class AppContainer extends HTMLElement {
         menusec.setAttribute(MenuAttribute.safeiconin, "M15 22.5C19.1421 22.5 22.5 19.1421 22.5 15C22.5 10.8579 19.1421 7.5 15 7.5C10.8579 7.5 7.5 10.8579 7.5 15C7.5 19.1421 10.8579 22.5 15 22.5Z");
         menusec.setAttribute(MenuAttribute.safeiconout, "M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15ZM15 2.91005C8.32291 2.91005 2.91005 8.32291 2.91005 15C2.91005 21.6771 8.32291 27.0899 15 27.0899C21.6771 27.0899 27.0899 21.6771 27.0899 15C27.0899 8.32291 21.6771 2.91005 15 2.91005Z");
         this.menu = menusec;
+        const cardsec = this.ownerDocument.createElement("main-card");
+        cardsec.setAttribute(appCard.image, "https://media.discordapp.net/attachments/1010976865424506900/1088708981612085258/Mask_group.png?width=428&height=580");
+        cardsec.setAttribute(appCard.name, "Peter");
+        cardsec.setAttribute(appCard.age, "25");
+        cardsec.setAttribute(appCard.gender, "He/Him");
+        cardsec.setAttribute(appCard.distance, "8 milles");
+        this.mainCard = cardsec;
     }
     connectedCallback() {
         this.render();
@@ -21,15 +29,18 @@ class AppContainer extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = ``;
-            const headerSec = this.ownerDocument.createElement("section");
-            headerSec.appendChild(this.header);
-            this.shadowRoot.appendChild(headerSec);
-            const sideSec = this.ownerDocument.createElement("section");
-            sideSec.className = "side-sec";
-            const menuSec = this.ownerDocument.createElement("section");
-            menuSec.appendChild(this.menu);
-            sideSec.appendChild(menuSec);
-            this.shadowRoot.appendChild(sideSec);
+            const headerSection = this.ownerDocument.createElement("section");
+            headerSection.appendChild(this.header);
+            this.shadowRoot.appendChild(headerSection);
+            const sideSection = this.ownerDocument.createElement("section");
+            sideSection.className = "side-sec";
+            this.shadowRoot.appendChild(sideSection);
+            const menuSection = this.ownerDocument.createElement("section");
+            menuSection.appendChild(this.menu);
+            sideSection.appendChild(menuSection);
+            const mainCardSection = this.ownerDocument.createElement("section");
+            mainCardSection.appendChild(this.mainCard);
+            this.shadowRoot.appendChild(mainCardSection);
         }
     }
 }
