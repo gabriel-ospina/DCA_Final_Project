@@ -3,15 +3,18 @@ import * as components from "./components/indexComponents.js"
 import Header, { HeaderAttribute } from "./components/header/header.js";
 import Menu, { MenuAttribute } from "./components/Menu/menu.js";
 import NewMatches, { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
+import MainCard, {appCard} from "./components/userCard/userCard.js";
+import AppMusicCard, {musicCard} from "./components/userSection/cardMusic.js";
 
 import dataNewMatches from "./Data/dataNewMatches.js";
-import MainCard, {appCard} from "./components/userCard/userCard.js";
+import dataMusicCard from "./Data/dataMusicCard.js"
 
 class AppContainer extends HTMLElement {
     header: Header;
     menu: Menu;
     mainCard: MainCard
     newmatches: NewMatches []=[];
+    musicCard: AppMusicCard [] = [];
 
     constructor(){
         super();
@@ -45,6 +48,12 @@ class AppContainer extends HTMLElement {
                 this.newmatches.push(matchcard);
         })
 
+        dataMusicCard.forEach((music) => {
+            const appmusicCard = this.ownerDocument.createElement("music-card") as AppMusicCard;
+                appmusicCard.setAttribute(musicCard.thumbnail, music.thumbnail);
+                appmusicCard.setAttribute(musicCard.mtitle, music.mtitle);
+                this.musicCard.push(appmusicCard)
+        })
 
     }
 
@@ -73,6 +82,7 @@ class AppContainer extends HTMLElement {
                         menuSection.appendChild(this.menu);
                         sideSection.appendChild(menuSection);
                     const newMatSec = this.ownerDocument.createElement("section");
+
                     newMatSec.className = "new-mat-sec"
                         const newMatTitle = this.ownerDocument.createElement("h1");
                         const newMatText = this.ownerDocument.createTextNode("New Matches");
@@ -91,6 +101,12 @@ class AppContainer extends HTMLElement {
                     mainCardSection.appendChild(this.mainCard);
                     this.shadowRoot.appendChild(mainCardSection);
                     mainCardSection.setAttribute("class", "rigth-sec")
+
+                const musicCardSection = this.ownerDocument.createElement("section")
+                        this.musicCard.forEach((music) => {
+                            musicCardSection.appendChild(music)
+                        })
+                    this.shadowRoot.appendChild(musicCardSection)
 
             pageSection.appendChild(sideSection);
             pageSection.appendChild(mainCardSection);
