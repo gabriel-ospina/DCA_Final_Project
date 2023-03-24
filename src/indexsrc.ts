@@ -2,10 +2,14 @@ import * as components from "./components/indexComponents.js"
 
 import Header, { HeaderAttribute } from "./components/header/header.js";
 import Menu, { MenuAttribute } from "./components/Menu/menu.js";
+import NewMatches, { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
+
+import dataNewMatches from "./Data/dataNewMatches.js";
 
 class AppContainer extends HTMLElement {
     header: Header;
     menu: Menu;
+    newmatches: NewMatches []=[];
 
     constructor(){
         super();
@@ -22,6 +26,14 @@ class AppContainer extends HTMLElement {
         menusec.setAttribute(MenuAttribute.safeiconin, "M15 22.5C19.1421 22.5 22.5 19.1421 22.5 15C22.5 10.8579 19.1421 7.5 15 7.5C10.8579 7.5 7.5 10.8579 7.5 15C7.5 19.1421 10.8579 22.5 15 22.5Z");
         menusec.setAttribute(MenuAttribute.safeiconout, "M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15ZM15 2.91005C8.32291 2.91005 2.91005 8.32291 2.91005 15C2.91005 21.6771 8.32291 27.0899 15 27.0899C21.6771 27.0899 27.0899 21.6771 27.0899 15C27.0899 8.32291 21.6771 2.91005 15 2.91005Z");
         this.menu=menusec
+
+        dataNewMatches.forEach((newmatch) => {
+            const matchcard = this.ownerDocument.createElement("new-matches") as NewMatches;
+                matchcard.setAttribute(NewMatchesAttribute.img, newmatch.img);
+                matchcard.setAttribute(NewMatchesAttribute.name, newmatch.name);
+                matchcard.setAttribute(NewMatchesAttribute.age, newmatch.age);
+                this.newmatches.push(matchcard);
+        })
 
 
     }
@@ -42,7 +54,19 @@ class AppContainer extends HTMLElement {
             sideSec.className = "side-sec";
                 const menuSec = this.ownerDocument.createElement("section");
                 menuSec.appendChild(this.menu);
-                sideSec.appendChild(menuSec)
+                sideSec.appendChild(menuSec);
+                const newMatSec = this.ownerDocument.createElement("section");
+                    const newMatTitle = this.ownerDocument.createElement("h1");
+                    const newMatText = this.ownerDocument.createTextNode("New Matches");
+                    newMatTitle.appendChild(newMatText)
+                    newMatSec.appendChild(newMatTitle)
+                    const newMatArr = this.ownerDocument.createElement("section")
+                    this.newmatches.forEach((match) => {
+                        newMatArr.appendChild(match)
+                    })
+                    newMatSec.appendChild(newMatArr)
+
+                    sideSec.appendChild(newMatSec)
             
             this.shadowRoot.appendChild(sideSec)
         }
