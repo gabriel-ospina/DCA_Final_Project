@@ -48,9 +48,11 @@ class AppContainer extends HTMLElement {
             sideSection.className = "side-sec";
             this.shadowRoot.appendChild(sideSection);
             const menuSection = this.ownerDocument.createElement("section");
+            menuSection.className = "menu-sec";
             menuSection.appendChild(this.menu);
             sideSection.appendChild(menuSection);
             const newMatSec = this.ownerDocument.createElement("section");
+            newMatSec.className = "new-mat-sec";
             const newMatTitle = this.ownerDocument.createElement("h1");
             const newMatText = this.ownerDocument.createTextNode("New Matches");
             newMatTitle.appendChild(newMatText);

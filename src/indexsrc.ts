@@ -69,21 +69,23 @@ class AppContainer extends HTMLElement {
                     this.shadowRoot.appendChild(sideSection)
 
                     const menuSection = this.ownerDocument.createElement("section");
+                    menuSection.className = "menu-sec"
                         menuSection.appendChild(this.menu);
                         sideSection.appendChild(menuSection);
-                        const newMatSec = this.ownerDocument.createElement("section");
-                            const newMatTitle = this.ownerDocument.createElement("h1");
-                            const newMatText = this.ownerDocument.createTextNode("New Matches");
-                            newMatTitle.appendChild(newMatText)
-                            newMatSec.appendChild(newMatTitle)
-                            const newMatArr = this.ownerDocument.createElement("section")
-                            newMatArr.className="newmatch-arr"
-                            this.newmatches.forEach((match) => {
-                                newMatArr.appendChild(match)
-                            })
-                            newMatSec.appendChild(newMatArr)
+                    const newMatSec = this.ownerDocument.createElement("section");
+                    newMatSec.className = "new-mat-sec"
+                        const newMatTitle = this.ownerDocument.createElement("h1");
+                        const newMatText = this.ownerDocument.createTextNode("New Matches");
+                        newMatTitle.appendChild(newMatText)
+                        newMatSec.appendChild(newMatTitle)
+                        const newMatArr = this.ownerDocument.createElement("section")
+                        newMatArr.className="newmatch-arr"
+                        this.newmatches.forEach((match) => {
+                            newMatArr.appendChild(match)
+                        })
+                        newMatSec.appendChild(newMatArr)
 
-                            sideSection.appendChild(newMatSec)
+                        sideSection.appendChild(newMatSec)
 
                 const mainCardSection = this.ownerDocument.createElement("section");
                     mainCardSection.appendChild(this.mainCard);
