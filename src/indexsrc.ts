@@ -131,13 +131,19 @@ class AppContainer extends HTMLElement {
                                 descripSeC.appendChild(this.description);
                                 infoSection.appendChild(descripSeC);
 
+                            const interestSection = this.ownerDocument.createElement("section");
+                                this.buttonTag.forEach((iTag) => {
+                                    interestSection.appendChild(iTag)
+                                })
+                                infoSection.appendChild(interestSection)
+
                             const musicCardSection = this.ownerDocument.createElement("section");
                                     this.musicCard.forEach((music) => {
                                         musicCardSection.appendChild(music);
                                     })
                                 infoSection.appendChild(musicCardSection);
                             mainSection.appendChild(infoSection);
-                        pageSection.appendChild(mainSection);
+                    pageSection.appendChild(mainSection);
             
             this.shadowRoot.appendChild(pageSection);
         }
