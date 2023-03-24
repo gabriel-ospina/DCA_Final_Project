@@ -37,7 +37,9 @@ class Header extends HTMLElement{
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
             <header>
-                <img src="${this.img}">
+                <svg>
+                    <path d="${this.img}"></path>
+                <svg>
                 <button>${this.account || "XOXO"}</button>
             </header>
             `;
