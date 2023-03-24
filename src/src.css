@@ -2,3 +2,24 @@
     display: flex;
     flex-flow: row;
 }
+
+.side-sec{
+    width: 25%;
+    padding: 0 40px;
+    border-right: 2px solid #D1D1D1;
+}
+
+.newmatch-arr{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    color: #C07699;
+}

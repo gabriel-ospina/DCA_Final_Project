@@ -43,9 +43,13 @@ class NewMatches extends HTMLElement{
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML = `
-            <div style="background-image: url(${this.img});">
-                <h3>${this.name}</h3>
-                <span>${this.age}</span>
+            <link rel="stylesheet" href="../src/components/newMatches/newMatches.css">
+
+            <div class="container" style="background-image: url(${this.img});">
+                <div class="text">
+                    <h3>${this.name}</h3>
+                    <span>${this.age}</span>
+                </div>
             </div>
             `;
         }

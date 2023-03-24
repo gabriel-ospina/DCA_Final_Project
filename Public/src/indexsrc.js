@@ -56,6 +56,7 @@ class AppContainer extends HTMLElement {
             newMatTitle.appendChild(newMatText);
             newMatSec.appendChild(newMatTitle);
             const newMatArr = this.ownerDocument.createElement("section");
+            newMatArr.className = "newmatch-arr";
             this.newmatches.forEach((match) => {
                 newMatArr.appendChild(match);
             });
