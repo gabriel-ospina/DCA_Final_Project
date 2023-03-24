@@ -29,8 +29,8 @@ class Header extends HTMLElement {
             <header>
                 <svg>
                     <path d="${this.img}"></path>
-                <svg>
-                <button>${this.account || "XOXO"}</button>
+                </svg>
+                <img src="${this.account}">
             </header>
             `;
         }
