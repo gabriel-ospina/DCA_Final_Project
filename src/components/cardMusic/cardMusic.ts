@@ -12,7 +12,7 @@ export enum musicCard {
                 thumbnail: null,
                 mtitle: null,
             } 
-            return
+            return Object.keys(musicAtt)
         }
 
         constructor(){

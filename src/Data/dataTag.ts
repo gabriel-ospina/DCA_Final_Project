@@ -5,23 +5,23 @@ interface DataShape{
 const dataTag: DataShape[] =  [
 
     {
-        tag:"Soccer",
+        tag: "Soccer",
     },
     
     {
-        tag:"Movies",
+        tag: "Movies",
     },
     
     {
-        tag:"Joggin",
+        tag: "Joggin",
     },
     
     {
-        tag:"Travelling",
+        tag: "Travelling",
     },
     
     {
-        tag:"Photos",
+        tag: "Photos",
     },
     
 ]

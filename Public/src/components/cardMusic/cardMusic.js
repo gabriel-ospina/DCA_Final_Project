@@ -9,7 +9,7 @@ class AppMusicCard extends HTMLElement {
             thumbnail: null,
             mtitle: null,
         };
-        return;
+        return Object.keys(musicAtt);
     }
     constructor() {
         super();
