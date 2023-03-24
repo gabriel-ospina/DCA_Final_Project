@@ -90,6 +90,7 @@ class AppContainer extends HTMLElement {
                 const mainCardSection = this.ownerDocument.createElement("section");
                     mainCardSection.appendChild(this.mainCard);
                     this.shadowRoot.appendChild(mainCardSection);
+                    mainCardSection.setAttribute("class", "rigth-sec")
 
             pageSection.appendChild(sideSection);
             pageSection.appendChild(mainCardSection);
