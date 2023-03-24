@@ -6,9 +6,12 @@ import NewMatches, { NewMatchesAttribute } from "./components/newMatches/newMatc
 import MainCard, {appCard} from "./components/userCard/userCard.js";
 import AppMusicCard, {musicCard} from "./components/cardMusic/cardMusic.js";
 import Description, { DescriptionAttribute } from "./components/description/description.js";
+import AppTag, {interestAtt} from "./components/interests/interests.js";
 
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js"
+import dataTag from "./Data/dataTag.js";
+
 
 class AppContainer extends HTMLElement {
     header: Header;
@@ -17,6 +20,7 @@ class AppContainer extends HTMLElement {
     newmatches: NewMatches []=[];
     musicCard: AppMusicCard [] = [];
     description: Description;
+    buttonTag: AppTag [] = [];
 
     constructor(){
         super();
@@ -54,7 +58,13 @@ class AppContainer extends HTMLElement {
             const appmusicCard = this.ownerDocument.createElement("music-card") as AppMusicCard;
                 appmusicCard.setAttribute(musicCard.thumbnail, music.thumbnail);
                 appmusicCard.setAttribute(musicCard.mtitle, music.mtitle);
-                this.musicCard.push(appmusicCard)
+                this.musicCard.push(appmusicCard);
+        })
+
+        dataTag.forEach((tagA) => {
+            const tagButton = this.ownerDocument.createElement("app-tag") as AppTag
+            tagButton.setAttribute(interestAtt.tag, tagA.tag)
+            this.buttonTag.push(tagButton);
         })
 
         const descsec = this.ownerDocument.createElement("my-desc") as Description;
