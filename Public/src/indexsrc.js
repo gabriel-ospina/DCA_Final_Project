@@ -3,7 +3,7 @@ import { MenuAttribute } from "./components/Menu/menu.js";
 import { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
 import { appCard } from "./components/userCard/userCard.js";
 import { musicCard } from "./components/cardMusic/cardMusic.js";
-import Description from "./components/description/description.js";
+import { DescriptionAttribute } from "./components/description/description.js";
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js";
 class AppContainer extends HTMLElement {
@@ -42,8 +42,8 @@ class AppContainer extends HTMLElement {
             appmusicCard.setAttribute(musicCard.mtitle, music.mtitle);
             this.musicCard.push(appmusicCard);
         });
-        const descsec = this.ownerDocument.createElement("descrp");
-        descsec.setAttribute(Description.description, "I’m a very chill who is looking for something long term, but i’m also open to keep things casual.");
+        const descsec = this.ownerDocument.createElement("my-desc");
+        descsec.setAttribute(DescriptionAttribute.description, "Im a very chill who is looking for something long term, but im also open to keep things casual.");
         this.description = descsec;
     }
     connectedCallback() {
@@ -86,6 +86,10 @@ class AppContainer extends HTMLElement {
             mainSection.appendChild(mainCardSection);
             const infoSection = this.ownerDocument.createElement("section");
             infoSection.className = "info-sec";
+            const descripSeC = this.ownerDocument.createElement("section");
+            descripSeC.className = "desc-sec";
+            descripSeC.appendChild(this.description);
+            infoSection.appendChild(descripSeC);
             const musicCardSection = this.ownerDocument.createElement("section");
             this.musicCard.forEach((music) => {
                 musicCardSection.appendChild(music);

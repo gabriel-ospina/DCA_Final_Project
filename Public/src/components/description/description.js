@@ -30,5 +30,5 @@ class Description extends HTMLElement {
         }
     }
 }
-customElements.define("descrp", Description);
+customElements.define("my-desc", Description);
 export default Description;

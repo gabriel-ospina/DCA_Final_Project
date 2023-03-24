@@ -57,8 +57,8 @@ class AppContainer extends HTMLElement {
                 this.musicCard.push(appmusicCard)
         })
 
-        const descsec = this.ownerDocument.createElement("descrp") as Description;
-            descsec.setAttribute(Description.description, "I’m a very chill who is looking for something long term, but i’m also open to keep things casual.");
+        const descsec = this.ownerDocument.createElement("my-desc") as Description;
+            descsec.setAttribute(DescriptionAttribute.description, "Im a very chill who is looking for something long term, but im also open to keep things casual.");
             this.description=descsec
 
     }
@@ -114,13 +114,18 @@ class AppContainer extends HTMLElement {
                         mainSection.appendChild(mainCardSection);
 
                         const infoSection = this.ownerDocument.createElement("section");
-                            infoSection.className="info-sec"
+                            infoSection.className="info-sec";
 
-                        const musicCardSection = this.ownerDocument.createElement("section");
-                                this.musicCard.forEach((music) => {
-                                    musicCardSection.appendChild(music);
-                                })
-                            infoSection.appendChild(musicCardSection);
+                            const descripSeC = this.ownerDocument.createElement("section");
+                                descripSeC.className = "desc-sec";
+                                descripSeC.appendChild(this.description);
+                                infoSection.appendChild(descripSeC);
+
+                            const musicCardSection = this.ownerDocument.createElement("section");
+                                    this.musicCard.forEach((music) => {
+                                        musicCardSection.appendChild(music);
+                                    })
+                                infoSection.appendChild(musicCardSection);
                             mainSection.appendChild(infoSection);
                         pageSection.appendChild(mainSection);
             
