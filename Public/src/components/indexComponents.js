@@ -1,1 +1,1 @@
-"use strict";
+export { default as Header } from "./header/header.js";
