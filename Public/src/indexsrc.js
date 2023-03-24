@@ -2,8 +2,13 @@ import { HeaderAttribute } from "./components/header/header.js";
 import { MenuAttribute } from "./components/Menu/menu.js";
 import { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
 import { appCard } from "./components/userCard/userCard.js";
+<<<<<<< HEAD
 import { musicCard } from "./components/userSection/cardMusic.js";
 import { interestAtt } from "./components/interests/interests.js";
+=======
+import { musicCard } from "./components/cardMusic/cardMusic.js";
+import Description from "./components/description/description.js";
+>>>>>>> origin
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js";
 import dataTag from "./Data/dataTag.js";
@@ -44,11 +49,17 @@ class AppContainer extends HTMLElement {
             appmusicCard.setAttribute(musicCard.mtitle, music.mtitle);
             this.musicCard.push(appmusicCard);
         });
+<<<<<<< HEAD
         dataTag.forEach((tagA) => {
             const tagButton = this.ownerDocument.createElement("app-tag");
             tagButton.setAttribute(interestAtt.tag, tagA.tag);
             this.buttonTag.push(tagButton);
         });
+=======
+        const descsec = this.ownerDocument.createElement("descrp");
+        descsec.setAttribute(Description.description, "I’m a very chill who is looking for something long term, but i’m also open to keep things casual.");
+        this.description = descsec;
+>>>>>>> origin
     }
     connectedCallback() {
         this.render();
@@ -81,17 +92,22 @@ class AppContainer extends HTMLElement {
             });
             newMatSec.appendChild(newMatArr);
             sideSection.appendChild(newMatSec);
+            pageSection.appendChild(sideSection);
+            const mainSection = this.ownerDocument.createElement("section");
+            mainSection.className = "main-sec";
             const mainCardSection = this.ownerDocument.createElement("section");
             mainCardSection.appendChild(this.mainCard);
-            this.shadowRoot.appendChild(mainCardSection);
             mainCardSection.setAttribute("class", "rigth-sec");
+            mainSection.appendChild(mainCardSection);
+            const infoSection = this.ownerDocument.createElement("section");
+            infoSection.className = "info-sec";
             const musicCardSection = this.ownerDocument.createElement("section");
             this.musicCard.forEach((music) => {
                 musicCardSection.appendChild(music);
             });
-            this.shadowRoot.appendChild(musicCardSection);
-            pageSection.appendChild(sideSection);
-            pageSection.appendChild(mainCardSection);
+            infoSection.appendChild(musicCardSection);
+            mainSection.appendChild(infoSection);
+            pageSection.appendChild(mainSection);
             this.shadowRoot.appendChild(pageSection);
         }
     }
