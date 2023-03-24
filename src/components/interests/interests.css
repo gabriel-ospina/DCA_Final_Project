@@ -1,0 +1,14 @@
+p{
+    font-family: 'Inter', sans-serif;
+}
+
+.tag-section{
+    background-color: #EFEFEF;
+    display: flex;
+    padding: 0 10px;
+    margin: 5px;
+    width: fit-content;
+    height: 34px;
+    border-radius: 50px;
+    align-items: center;
+}

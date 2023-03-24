@@ -23,8 +23,9 @@ class AppTag extends HTMLElement {
     render() {
         if (this.shadowRoot)
             this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../src/components/interests/interests.css">
         <div class="tag-section">
-            <div>${this.tag}</div>     
+            <div><p>${this.tag}</p></div>     
         </div>
         `;
     }
