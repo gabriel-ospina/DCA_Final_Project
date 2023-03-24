@@ -73,17 +73,22 @@ class AppContainer extends HTMLElement {
             });
             newMatSec.appendChild(newMatArr);
             sideSection.appendChild(newMatSec);
+            pageSection.appendChild(sideSection);
+            const mainSection = this.ownerDocument.createElement("section");
+            mainSection.className = "main-sec";
             const mainCardSection = this.ownerDocument.createElement("section");
             mainCardSection.appendChild(this.mainCard);
-            this.shadowRoot.appendChild(mainCardSection);
             mainCardSection.setAttribute("class", "rigth-sec");
+            mainSection.appendChild(mainCardSection);
+            const infoSection = this.ownerDocument.createElement("section");
+            infoSection.className = "info-sec";
             const musicCardSection = this.ownerDocument.createElement("section");
             this.musicCard.forEach((music) => {
                 musicCardSection.appendChild(music);
             });
-            this.shadowRoot.appendChild(musicCardSection);
-            pageSection.appendChild(sideSection);
-            pageSection.appendChild(mainCardSection);
+            infoSection.appendChild(musicCardSection);
+            mainSection.appendChild(infoSection);
+            pageSection.appendChild(mainSection);
             this.shadowRoot.appendChild(pageSection);
         }
     }
