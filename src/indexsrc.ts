@@ -3,6 +3,7 @@ import * as components from "./components/indexComponents.js"
 import Header, { HeaderAttribute } from "./components/header/header.js";
 import Menu, { MenuAttribute } from "./components/Menu/menu.js";
 import MainCard, {appCard} from "./components/userCard/userCard.js";
+import AppTag, {interestAtt} from "./components/interests/interests.js";
 
 class AppContainer extends HTMLElement {
     header: Header;
