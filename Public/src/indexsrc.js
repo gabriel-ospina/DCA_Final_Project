@@ -99,6 +99,7 @@ class AppContainer extends HTMLElement {
             descripSeC.appendChild(this.description);
             infoSection.appendChild(descripSeC);
             const interestSection = this.ownerDocument.createElement("section");
+            interestSection.className = "tag-section";
             this.buttonTag.forEach((iTag) => {
                 interestSection.appendChild(iTag);
             });

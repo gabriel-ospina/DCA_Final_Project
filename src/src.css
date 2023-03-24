@@ -43,3 +43,14 @@ h1 {
     font-size: 30px;
     color: #C07699;
 }
+
+.tag-section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 264px;
+}
+
+.info-sec{
+    margin-left: 15px;
+    width: 251px;
+}
