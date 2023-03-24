@@ -5,6 +5,7 @@ import Menu, { MenuAttribute } from "./components/Menu/menu.js";
 import NewMatches, { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
 import MainCard, {appCard} from "./components/userCard/userCard.js";
 import AppMusicCard, {musicCard} from "./components/cardMusic/cardMusic.js";
+import Description, { DescriptionAttribute } from "./components/description/description.js";
 
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js"
@@ -15,6 +16,7 @@ class AppContainer extends HTMLElement {
     mainCard: MainCard
     newmatches: NewMatches []=[];
     musicCard: AppMusicCard [] = [];
+    description: Description;
 
     constructor(){
         super();
@@ -54,6 +56,10 @@ class AppContainer extends HTMLElement {
                 appmusicCard.setAttribute(musicCard.mtitle, music.mtitle);
                 this.musicCard.push(appmusicCard)
         })
+
+        const descsec = this.ownerDocument.createElement("descrp") as Description;
+            descsec.setAttribute(Description.description, "I’m a very chill who is looking for something long term, but i’m also open to keep things casual.");
+            this.description=descsec
 
     }
 
