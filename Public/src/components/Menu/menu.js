@@ -29,6 +29,8 @@ class Menu extends HTMLElement {
     render() {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="../src/components/Menu/menu.css">
+
             <nav>
                 <div class="main-selec">
                     <svg width="17" height="22" viewBox="0 0 17 22"><path d="${this.mainicon}" fill="#816CAD"></path></svg>

@@ -1,5 +1,15 @@
 header{
+    height: 3.5vw;
+    padding: 5px 40px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid #D1D1D1;
+}
+
+img{
+    height: 54px;
 }
 
 svg{
