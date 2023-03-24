@@ -2,7 +2,7 @@ import { HeaderAttribute } from "./components/header/header.js";
 import { MenuAttribute } from "./components/Menu/menu.js";
 import { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
 import { appCard } from "./components/userCard/userCard.js";
-import { musicCard } from "./components/userSection/cardMusic.js";
+import { musicCard } from "./components/cardMusic/cardMusic.js";
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js";
 class AppContainer extends HTMLElement {

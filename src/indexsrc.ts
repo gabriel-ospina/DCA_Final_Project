@@ -4,7 +4,7 @@ import Header, { HeaderAttribute } from "./components/header/header.js";
 import Menu, { MenuAttribute } from "./components/Menu/menu.js";
 import NewMatches, { NewMatchesAttribute } from "./components/newMatches/newMatches.js";
 import MainCard, {appCard} from "./components/userCard/userCard.js";
-import AppMusicCard, {musicCard} from "./components/userSection/cardMusic.js";
+import AppMusicCard, {musicCard} from "./components/cardMusic/cardMusic.js";
 
 import dataNewMatches from "./Data/dataNewMatches.js";
 import dataMusicCard from "./Data/dataMusicCard.js"
