@@ -1,0 +1,81 @@
+h1{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0 7px 6px 17px;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0 7px 6px 17px;
+}
+
+.card{
+    width: 307px;
+    height: 507px;
+    border-radius: 16px;
+    box-shadow: 0 0 26px 0 rgba(129, 108, 173, 0.35);
+}
+.up-section{
+   width: 307px;
+   height: 415.05px;
+   background-size: cover;
+   background-position: center 0px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: flex-start;
+   flex-direction: column;
+   border-radius: 16px 16px 0 0;
+}
+
+.distance{
+    display: flex;
+    align-items: center;
+    margin: 0 10px 10px 14px;
+}
+
+.info{
+    display: flex;
+    align-items: baseline;
+}
+
+
+.bottom-section{
+    height: 91.95px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.buttons{
+    width: 228px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 8px 0 rgb(129, 108, 173, 0.5);
+}
+
+.main-button{
+    width: 68px;
+    height: 68px;
+}
+
+.pass{
+    background-color: #C07699;
+}
+
+.favorite{
+    width: 40px;
+    height: 40px;
+    background-color: #F9BAD9;
+}
+
+.like{
+    background-color: #9AA4D9;
+}
+
